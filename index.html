@@ -1,0 +1,452 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Punjab Portal - Flagship Projects</title>
+
+    <link rel="icon" href="/sites/gateway.punjab.gov.pk/governmentofpunjab.ico" type="image/vnd.microsoft.icon" />
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- FontAwesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Font (Inter) -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brandGreen: '#00a651',
+                        brandGreenDark: '#008741',
+                        navText: '#2d3748',
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f4f7f5;
+            position: relative;
+            min-height: 100vh;
+        }
+
+        /* Page blurred wheat texture background overlay */
+        .page-bg-blur {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            background-image: url('assets/page-bg.jpg');
+            background-size: cover;
+            background-position: center;
+            filter: blur(8px) opacity(0.25);
+            transform: scale(1.05); /* Prevents blurred edges bleeding */
+        }
+
+        /* Hero Banner Custom Overlay */
+        .hero-banner {
+            background: linear-gradient(135deg, rgba(0, 166, 81, 0.92) 0%, rgba(0, 120, 58, 0.92) 100%), 
+                        url('assets/hero-bg.jpg') center/cover no-repeat;
+        }
+
+        /* Gradient overlay for cards to make bottom text readable */
+        .card-gradient-overlay {
+            background: linear-gradient(to top, rgba(0,0,0,0.85) 0%, rgba(0,0,0,0.4) 50%, rgba(0,0,0,0.05) 100%);
+        }
+
+        /* Subtle smooth transition for cards */
+        .project-card {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .project-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 12px 24px -10px rgba(0, 0, 0, 0.2);
+        }
+    </style>
+</head>
+ <body class="text-gray-800 antialiased relative min-h-screen">
+    <!-- Fixed Background Image Container -->
+    <div 
+        class="fixed inset-0 bg-cover bg-center bg-no-repeat bg-fixed -z-20 pointer-events-none"
+        style="background-image: url('https://punjab.gov.pk/sites/punjab.gov.pk/themes/bootstrap_subtheme/images/banner-wrapper.png');"
+    ></div>
+
+    <!-- Soft White Overlay & Blur Layer (Exact Original Look) -->
+    <div class="fixed inset-0 bg-white/55 backdrop-blur-[2px] -z-10 pointer-events-none"></div>
+
+    <div class="page-bg-blur" aria-hidden="true"></div>
+
+    <header class="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-4 pb-2">
+        <div class="flex flex-col lg:flex-row items-center justify-between gap-4 py-2">
+            
+            <!-- Logo & Title -->
+            <div class="flex items-center space-x-3 cursor-pointer">
+                <img src="./images/logo.png" 
+                     onerror="this.src='https://placehold.co/70x70/00a651/ffffff?text=LOGO'" 
+                     alt="Punjab Portal Logo" 
+                     class="h-16 w-auto object-contain" />
+                
+            </div>
+
+            <!-- Navigation Links & Search -->
+            <div class="flex flex-wrap items-center justify-center lg:justify-end gap-x-6 gap-y-2 text-sm sm:text-base font-medium text-gray-800">
+                <a href="#" class="hover:text-brandGreen transition-colors">About Government</a>
+                <a href="#" class="hover:text-brandGreen transition-colors">Citizen Corner</a>
+                <a href="#" class="hover:text-brandGreen transition-colors">Transparency</a>
+                <a href="#" class="hover:text-brandGreen transition-colors">Statistics</a>
+                <a href="#" class="hover:text-brandGreen transition-colors">IT and Innovation Department</a>
+                
+                <!-- Search Icon Button -->
+                <button class="bg-brandGreen hover:bg-brandGreenDark text-white p-2.5 rounded-lg flex items-center justify-center transition-colors shadow-sm ml-2" aria-label="Search">
+                    <i class="fa-solid fa-magnifying-glass text-lg"></i>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 my-6">
+        
+        <!-- Hero Banner Container -->
+       <div class="hero-banner rounded-2xl shadow-md py-12 px-6 sm:px-12 text-center text-white relative overflow-hidden bg-cover bg-center" style="background-image: url('	https://punjab.gov.pk/sites/punjab.gov.pk/themes/bootstrap_subtheme/images/header.png');">
+    <!-- Green Color Overlay (Same as image tint) -->
+    <div class="absolute inset-0 mix-blend-multiply pointer-events-none"></div>
+
+    <!-- Content Wrapper (Relative z-index for visibility) -->
+    <div class="relative z-10">
+        <!-- Breadcrumb Pill -->
+        <div class="inline-flex items-center bg-white text-gray-800 font-medium text-sm sm:text-base px-6 py-1.5 rounded-lg shadow-sm mb-6">
+            <span class="text-gray-600">Home</span>
+            <span class="mx-2 text-gray-400">/</span>
+            <span class="text-brandGreen font-semibold">Flagship Projects</span>
+        </div>
+
+        <!-- Page Title -->
+        <h2 class="text-3xl sm:text-5xl font-extrabold tracking-wide text-white drop-shadow-sm">
+            Flagship Projects
+        </h2>
+    </div>
+</div>
+
+        <section class="mt-8 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            
+            <!-- Card 1: Agriculture -->
+            <div class="project-card relative rounded-2xl overflow-hidden shadow-md h-80 cursor-pointer group">
+                <img src="assets/agriculture.jpg" 
+                     onerror="this.src='https://punjab.gov.pk/system/files/high-tech.jpg'" 
+                     alt="CM Punjab High-Tech Farm Mechanization" 
+                     class="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
+                
+                <div class="card-gradient-overlay absolute inset-0 flex flex-col justify-between p-5">
+                    <!-- Top Category Tag -->
+                    <div>
+                        <span class="inline-block bg-white text-gray-900 text-xs sm:text-sm font-semibold px-3 py-1 rounded-md shadow">
+                            Agriculture
+                        </span>
+                    </div>
+                    
+                    <!-- Bottom Content -->
+                    <div class="text-white">
+                        <h3 class="text-lg sm:text-xl font-bold leading-snug mb-1">
+                            CM Punjab High-Tech Farm Mechanization Finance Program
+                        </h3>
+                        <p class="text-xs sm:text-sm text-gray-200 line-clamp-2">
+                            Enhancing productivity by adoption of hi-tech agricultural machinery
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Card 2: Youth -->
+            <div class="project-card relative rounded-2xl overflow-hidden shadow-md h-80 cursor-pointer group">
+                <img src="assets/youth-internship.jpg" 
+                     onerror="this.src='https://punjab.gov.pk/system/files/cmitinterns.png'" 
+                     alt="Chief Minister IT Internship Program" 
+                     class="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
+                
+                <div class="card-gradient-overlay absolute inset-0 flex flex-col justify-between p-5">
+                    <!-- Top Category Tag -->
+                    <div>
+                        <span class="inline-block bg-white text-gray-900 text-xs sm:text-sm font-semibold px-3 py-1 rounded-md shadow">
+                            Youth
+                        </span>
+                    </div>
+                    
+                    <!-- Bottom Content -->
+                    <div class="text-white">
+                        <h3 class="text-lg sm:text-xl font-bold leading-snug mb-1">
+                            Chief Minister IT Internship Program
+                        </h3>
+                        <p class="text-xs sm:text-sm text-gray-200 line-clamp-2">
+                            Empowering youth through technology
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Card 3: Transport -->
+            <div class="project-card relative rounded-2xl overflow-hidden shadow-md h-80 cursor-pointer group">
+                <img src="assets/e-taxi.jpg" 
+                     onerror="this.src='https://punjab.gov.pk/system/files/Punjab-e-taxi.png'" 
+                     alt="E-Taxi" 
+                     class="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
+                
+                <div class="card-gradient-overlay absolute inset-0 flex flex-col justify-between p-5">
+                    <!-- Top Category Tag -->
+                    <div>
+                        <span class="inline-block bg-white text-gray-900 text-xs sm:text-sm font-semibold px-3 py-1 rounded-md shadow">
+                            Transport
+                        </span>
+                    </div>
+                    
+                    <!-- Bottom Content -->
+                    <div class="text-white">
+                        <h3 class="text-lg sm:text-xl font-bold leading-snug mb-1">
+                            E-Taxi
+                        </h3>
+                        <p class="text-xs sm:text-sm text-gray-200 line-clamp-2">
+                            Promoting clean, smart and sustainable mobility
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Card 4 (Second Row sample) -->
+            <div class="project-card relative rounded-2xl overflow-hidden shadow-md h-80 cursor-pointer group">
+                <img src="assets/himmat-card.jpg" 
+                     onerror="this.src='https://punjab.gov.pk/system/files/t-cash-card.png'" 
+                     alt="Chief Minister Kisan Card" 
+                     class="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
+                
+                <div class="card-gradient-overlay absolute inset-0 flex flex-col justify-between p-5">
+                    <div>
+                        <span class="inline-block bg-white text-gray-900 text-xs sm:text-sm font-semibold px-3 py-1 rounded-md shadow">
+                            Social Welfare
+                        </span>
+                    </div>
+                    <div class="text-white">
+                        <h3 class="text-lg sm:text-xl font-bold leading-snug mb-1">
+                            Chief Minister Kisan Card
+                        </h3>
+                        <p class="text-xs sm:text-sm text-gray-200 line-clamp-2">
+                            Financial relief and subsidized agricultural inputs for farmers
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+           <div class="project-card relative rounded-2xl overflow-hidden shadow-md h-80 cursor-pointer group">
+    <img src="assets/apni-zameen.jpg" 
+         onerror="this.src='https://images.unsplash.com/photo-1560518883-ce09059eeffa?q=80&w=800&auto=format&fit=crop'" 
+         alt="Apni Zameen Apna Ghar" 
+         class="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
+    
+    <div class="card-gradient-overlay absolute inset-0 flex flex-col justify-between p-5">
+        <div>
+            <span class="inline-block bg-white text-gray-900 text-xs sm:text-sm font-semibold px-3 py-1 rounded-md shadow">
+                Housing
+            </span>
+        </div>
+        <div class="text-white">
+            <h3 class="text-lg sm:text-xl font-bold leading-snug mb-1">
+                Apni Zameen Apna Ghar
+            </h3>
+            <p class="text-xs sm:text-sm text-gray-200 line-clamp-2">
+                Building a prosperous and inclusive Punjab
+            </p>
+        </div>
+    </div>
+</div>
+
+<div class="project-card relative rounded-2xl overflow-hidden shadow-md h-80 cursor-pointer group">
+    <img src="assets/ration-card.jpg" 
+         onerror="this.src='https://punjab.gov.pk/system/files/ration-card.png'" 
+         alt="CM Punjab Ration Card" 
+         class="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
+    
+    <div class="card-gradient-overlay absolute inset-0 flex flex-col justify-between p-5">
+        <div>
+            <span class="inline-block bg-white text-gray-900 text-xs sm:text-sm font-semibold px-3 py-1 rounded-md shadow">
+                Social Protection
+            </span>
+        </div>
+        <div class="text-white">
+            <h3 class="text-lg sm:text-xl font-bold leading-snug mb-1">
+                CM Punjab Ration Card
+            </h3>
+            <p class="text-xs sm:text-sm text-gray-200 line-clamp-2">
+                Ensuring Every Home Has a Meal, Every Family Has Support
+            </p>
+        </div>
+    </div>
+</div>
+
+<div class="project-card relative rounded-2xl overflow-hidden shadow-md h-80 cursor-pointer group">
+    <img src="assets/suthra-punjab.jpg" 
+         onerror="this.src='https://punjab.gov.pk/system/files/suthra-punjab.png'" 
+         alt="Suthra Punjab" 
+         class="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
+    
+    <div class="card-gradient-overlay absolute inset-0 flex flex-col justify-between p-5">
+        <div>
+            <span class="inline-block bg-white text-gray-900 text-xs sm:text-sm font-semibold px-3 py-1 rounded-md shadow">
+                Local Govt
+            </span>
+        </div>
+        <div class="text-white">
+            <h3 class="text-lg sm:text-xl font-bold leading-snug mb-1">
+                Suthra Punjab
+            </h3>
+            <p class="text-xs sm:text-sm text-gray-200 line-clamp-2">
+                Maryam Nawaz ka Punjab, Suthra Punjab
+            </p>
+        </div>
+    </div>
+</div>
+
+<div class="project-card relative rounded-2xl overflow-hidden shadow-md h-80 cursor-pointer group">
+    <img src="assets/laptop-program.jpg" 
+         onerror="this.src='https://punjab.gov.pk/system/files/cmitinterns.png'" 
+         alt="CM Punjab Laptop Program 2025" 
+         class="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
+    
+    <div class="card-gradient-overlay absolute inset-0 flex flex-col justify-between p-5">
+        <div>
+            <span class="inline-block bg-white text-gray-900 text-xs sm:text-sm font-semibold px-3 py-1 rounded-md shadow">
+                Youth
+            </span>
+        </div>
+        <div class="text-white">
+            <h3 class="text-lg sm:text-xl font-bold leading-snug mb-1">
+                CM Punjab Laptop Program 2025
+            </h3>
+            <p class="text-xs sm:text-sm text-gray-200 line-clamp-2">
+                Empowering youth, bridging the digital divide
+            </p>
+        </div>
+    </div>
+</div>
+
+<div class="project-card relative rounded-2xl overflow-hidden shadow-md h-80 cursor-pointer group">
+    <img src="assets/e-buses.jpg" 
+         onerror="this.src='https://punjab.gov.pk/system/files/e-bus.jpg'" 
+         alt="E-Buses" 
+         class="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
+    
+    <div class="card-gradient-overlay absolute inset-0 flex flex-col justify-between p-5">
+        <div>
+            <span class="inline-block bg-white text-gray-900 text-xs sm:text-sm font-semibold px-3 py-1 rounded-md shadow">
+                Transport
+            </span>
+        </div>
+        <div class="text-white">
+            <h3 class="text-lg sm:text-xl font-bold leading-snug mb-1">
+                E-Buses
+            </h3>
+            <p class="text-xs sm:text-sm text-gray-200 line-clamp-2">
+                Eco-friendly buses for environmental protection
+            </p>
+        </div>
+    </div>
+</div>
+
+        </section>
+    </main>
+
+    <div class="fixed bottom-6 left-6 z-50">
+        <button class="bg-blue-600 hover:bg-blue-700 text-white p-3.5 rounded-full shadow-lg flex items-center justify-center transition-transform hover:scale-110" aria-label="Accessibility Options">
+            <i class="fa-solid fa-universal-access text-2xl"></i>
+        </button>
+    </div>
+
+
+    <!-- Footer Section with Video Background -->
+<footer class="relative text-white overflow-hidden mt-16">
+    <!-- Background Video -->
+    <video autoplay loop muted playsinline class="absolute inset-0 w-full h-full object-cover z-0">
+        <source src="https://punjab.gov.pk/system/files/inpunvideo.mp4" type="video/mp4">
+        <!-- Fallback Poster Image if Video Fails -->
+        <img src="https://images.unsplash.com/photo-1500382017468-9049fed747ef?q=80&w=1600&auto=format&fit=crop" alt="Punjab Fields" class="w-full h-full object-cover">
+    </video>
+
+    <!-- Green Overlay Tint (Exact Match with Image) -->
+    <div class="absolute inset-0 bg-[#07592a]/85 mix-blend-multiply z-10 pointer-events-none"></div>
+
+    <!-- Footer Main Content -->
+    <div class="relative z-20 max-w-7xl mx-auto px-6 pt-16 pb-12">
+        <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-8 mb-12">
+            
+            <!-- Column 1: About Government -->
+            <div>
+                <h3 class="text-xl font-bold mb-4 tracking-wide text-white">About Government</h3>
+                <ul class="space-y-2.5 text-sm text-gray-100 font-medium">
+                    <li><a href="#" class="hover:underline hover:text-green-200 transition-colors">Our Chief Ministers</a></li>
+                    <li><a href="#" class="hover:underline hover:text-green-200 transition-colors">Our Governors</a></li>
+                    <li><a href="#" class="hover:underline hover:text-green-200 transition-colors">Cabinet and Functionaries</a></li>
+                    <li><a href="#" class="hover:underline hover:text-green-200 transition-colors">A-Z of Websites</a></li>
+                    <li><a href="#" class="hover:underline hover:text-green-200 transition-colors">Government Contacts</a></li>
+                    <li><a href="#" class="hover:underline hover:text-green-200 transition-colors">News Room</a></li>
+                </ul>
+            </div>
+
+            <!-- Column 2: Citizen Corner -->
+            <div>
+                <h3 class="text-xl font-bold mb-4 tracking-wide text-white">Citizen Corner</h3>
+                <ul class="space-y-2.5 text-sm text-gray-100 font-medium">
+                    <li><a href="#" class="hover:underline hover:text-green-200 transition-colors">Facilitation Centers</a></li>
+                    <li><a href="#" class="hover:underline hover:text-green-200 transition-colors">Digital Platforms</a></li>
+                    <li><a href="#" class="hover:underline hover:text-green-200 transition-colors">Mobile Applications</a></li>
+                    <li><a href="#" class="hover:underline hover:text-green-200 transition-colors">Helplines</a></li>
+                </ul>
+            </div>
+
+            <!-- Column 3: Transparency -->
+            <div>
+                <h3 class="text-xl font-bold mb-4 tracking-wide text-white">Transparency</h3>
+                <ul class="space-y-2.5 text-sm text-gray-100 font-medium">
+                    <li><a href="#" class="hover:underline hover:text-green-200 transition-colors">PC-1s</a></li>
+                    <li><a href="#" class="hover:underline hover:text-green-200 transition-colors">Tenders</a></li>
+                    <li><a href="#" class="hover:underline hover:text-green-200 transition-colors">Punjab Laws</a></li>
+                </ul>
+            </div>
+
+            <!-- Column 4: About Punjab -->
+            <div>
+                <h3 class="text-xl font-bold mb-4 tracking-wide text-white">About Punjab</h3>
+                <ul class="space-y-2.5 text-sm text-gray-100 font-medium">
+                    <li><a href="#" class="hover:underline hover:text-green-200 transition-colors">Quick Stats</a></li>
+                    <li><a href="#" class="hover:underline hover:text-green-200 transition-colors">Our History</a></li>
+                    <li><a href="#" class="hover:underline hover:text-green-200 transition-colors">Geography</a></li>
+                    <li><a href="#" class="hover:underline hover:text-green-200 transition-colors">Economy</a></li>
+                    <li><a href="#" class="hover:underline hover:text-green-200 transition-colors">People</a></li>
+                    <li><a href="#" class="hover:underline hover:text-green-200 transition-colors">Tourism</a></li>
+                </ul>
+            </div>
+
+        </div>
+
+        <!-- Social Media Buttons -->
+        <div class="flex justify-center items-center gap-4 mb-6">
+            <!-- X (Twitter) Icon -->
+            <a href="#" class="w-10 h-10 bg-white text-emerald-800 rounded-lg flex items-center justify-center font-bold text-lg hover:bg-gray-100 transition-transform hover:scale-105 shadow-md">
+                X
+            </a>
+            <!-- Facebook Icon -->
+            <a href="#" class="w-10 h-10 bg-white text-emerald-800 rounded-lg flex items-center justify-center font-bold text-xl hover:bg-gray-100 transition-transform hover:scale-105 shadow-md">
+                f
+            </a>
+            <!-- Instagram Icon -->
+            <a href="#" class="w-10 h-10 bg-white text-emerald-800 rounded-lg flex items-center justify-center hover:bg-gray-100 transition-transform hover:scale-105 shadow-md">
+                <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24">
+                    <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6
+</body>
+</html>
